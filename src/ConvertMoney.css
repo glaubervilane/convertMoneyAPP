@@ -1,5 +1,6 @@
 .convert-money-container {
   max-width: 800px;
+  height: 500px;
   margin: auto;
   position: relative;
   overflow: hidden;
@@ -73,6 +74,7 @@ h1 {
   background-color: #28a745;
   color: #fff;
   cursor: pointer;
+  width: 150px;
   transition: background-color 0.3s;
 }
 
