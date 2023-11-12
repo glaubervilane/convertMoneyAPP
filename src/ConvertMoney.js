@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ConvertMoney.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Alert } from 'react-bootstrap';
+import { Alert, Modal } from 'react-bootstrap';
 import { faAngleDoubleRight, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import HeroImage from './images/hero.jpg';
 
@@ -80,6 +80,19 @@ const ConvertMoney = () => {
           </button>
         </div>
       </form>
+      <Modal show={false}>
+        <Modal.Header closeButton>
+          <Modal.Title>Conversion Result</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          1 USD = 5.22 BRL
+        </Modal.Body>
+        <Modal.Footer>
+          <button variant="success" type="button" className="btn btn-primary">
+            New Conversion
+          </button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 };
