@@ -1,11 +1,7 @@
-import React from'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import ListCurrency from './ListCurrency';
 
-describe('ListCurrency', () => {
-  it('renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<ListCurrency />, div);
-    ReactDOM.unmountComponentAtNode(div);
-  });
+it('renders without crashing', () => {
+  const root = document.createElement('div');
+  createRoot(root).render(<ListCurrency />);
 });

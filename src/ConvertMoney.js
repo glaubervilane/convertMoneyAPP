@@ -27,7 +27,7 @@ const ConvertMoney = () => {
   };
 
   return (
-    <div className="convert-money-container">
+    <div className="convert-money-container" data-testid="convert-money-container">
       <section className="hero-section">
         <img src={HeroImage} alt="Hero" className="hero-image" />
         <div className="hero-text">
