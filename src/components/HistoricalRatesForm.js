@@ -36,7 +36,7 @@ const HistoricalRatesForm = ({ showModal, handleCloseModal }) => {
         to: toCurrency,
       },
       headers: {
-        'X-RapidAPI-Key': '64f5b12c36mshda8a86d5b241d8fp1c681fjsn6386ebacada1',
+        'X-RapidAPI-Key': process.env.REACT_APP_RAPIDAPI_KEY,
         'X-RapidAPI-Host': 'currency-conversion-and-exchange-rates.p.rapidapi.com',
       },
     };
