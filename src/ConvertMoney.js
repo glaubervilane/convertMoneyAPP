@@ -1,3 +1,4 @@
+// ConvertMoney.js
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Alert, Modal } from 'react-bootstrap';
@@ -6,10 +7,10 @@ import axios from 'axios';
 import ListCurrency from './components/ListCurrency';
 import HeroImage from './images/hero.jpg';
 import './ConvertMoney.css';
+import HistoricalRatesForm from './components/HistoricalRatesForm';
 
 const FIXER_API_KEY = process.env.REACT_APP_FIXER_API_KEY;
 const FIXER_URL = `http://data.fixer.io/api/latest?access_key=${FIXER_API_KEY}`;
-
 
 const ConvertMoney = () => {
   const [amount, setAmount] = useState(1);
@@ -20,6 +21,10 @@ const ConvertMoney = () => {
   const [showModal, setShowModal] = useState(false);
   const [conversionResult, setConversionResult] = useState(null);
   const [error, setError] = useState(false);
+
+  const [showHistoricalModal, setShowHistoricalModal] = useState(false);
+  const handleShowHistoricalModal = () => setShowHistoricalModal(true);
+  const handleCloseHistoricalModal = () => setShowHistoricalModal(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -126,6 +131,13 @@ const ConvertMoney = () => {
           </button>
         </div>
       </form>
+      {/* Button to trigger historical rates form */}
+      <button type="button" className="btn btn-secondary" onClick={handleShowHistoricalModal}>
+        Historical Rates
+      </button>
+      {/* Render HistoricalRatesForm component */}
+      <HistoricalRatesForm showModal={showHistoricalModal} handleCloseModal={handleCloseHistoricalModal} />
+      {/* Render the conversion result modal */}
       <Modal show={showModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>
           <Modal.Title>Conversion Result</Modal.Title>

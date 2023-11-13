@@ -85,3 +85,19 @@ h1 {
 .convert-button:hover {
   background-color: #218838;
 }
+
+.custom-modal {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.custom-form {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
