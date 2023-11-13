@@ -184,7 +184,9 @@ const HistoricalRatesForm = ({ showModal, handleCloseModal }) => {
                 </tr>
               </thead>
               <tbody>
-                {Object.entries(historicalResult).map(([date, rates]) => (
+              {Object.entries(historicalResult)
+                .sort((a, b) => new Date(a[0]) - new Date(b[0]))
+                .map(([date, rates]) => (
                   <tr key={date}>
                     <td>{date}</td>
                     <td>{rates[fromCurrency]}</td>
