@@ -5,6 +5,7 @@ import { Alert, Modal } from 'react-bootstrap';
 import '../ConvertMoney.css';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
+// eslint-disable-next-line no-unused-vars
 import ListCurrency, { getSortedCurrencyList } from '../components/ListCurrency';
 
 const HistoricalRatesForm = ({ showModal, handleCloseModal }) => {
@@ -16,6 +17,7 @@ const HistoricalRatesForm = ({ showModal, handleCloseModal }) => {
   const [formValidated, setFormValidated] = useState(false);
   const [historicalResult, setHistoricalResult] = useState(null);
   const [error, setError] = useState(false);
+  // eslint-disable-next-line no-unused-vars
   const [currencies, setCurrencies] = useState([]);
 
   const handleSubmit = (e) => {
@@ -153,8 +155,12 @@ const HistoricalRatesForm = ({ showModal, handleCloseModal }) => {
 
             <div className="form-group">
               <br />
-              <button type="submit" className="btn btn-primary" disabled={loading}>
-                {loading && <FontAwesomeIcon icon={faSpinner} spin style={{ marginRight: '5px' }} />}
+              <button 
+                type="submit" 
+                className="btn btn-primary" 
+                disabled={loading} 
+                style={{ width: '150px' }}>
+                {loading && <FontAwesomeIcon icon={faSpinner} spin style={{ marginRight: '5px'}} />}
                 {loading ? 'Fetching...' : 'Fetch Rates'}
               </button>
             </div>

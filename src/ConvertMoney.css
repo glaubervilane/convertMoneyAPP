@@ -5,6 +5,7 @@
   position: relative;
   overflow: hidden;
   border-radius: 10px;
+  background-color: #ccc;
 }
 
 .hero-section {

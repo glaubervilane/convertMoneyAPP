@@ -131,10 +131,6 @@ const ConvertMoney = () => {
           </button>
         </div>
       </form>
-      {/* Button to trigger historical rates form */}
-      <button type="button" className="btn btn-secondary" onClick={handleShowHistoricalModal}>
-        Historical Rates
-      </button>
       {/* Render HistoricalRatesForm component */}
       <HistoricalRatesForm showModal={showHistoricalModal} handleCloseModal={handleCloseHistoricalModal} />
       {/* Render the conversion result modal */}
@@ -151,6 +147,16 @@ const ConvertMoney = () => {
           </button>
         </Modal.Footer>
       </Modal>
+      <div>
+      {/* Button to trigger historical rates form */}
+      <button 
+        type="button" 
+        className="btn btn-secondary convert-button" 
+        onClick={handleShowHistoricalModal} 
+        style={{ marginTop: '150px', marginLeft: '62px', display: 'flex' }}>
+        Historical Rates
+      </button>
+      </div>
     </div>
   );
 };
