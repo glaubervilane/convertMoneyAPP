@@ -1,5 +1,5 @@
 .convert-money-container {
-  max-width: 800px;
+  max-width: 1000px;
   height: 500px;
   margin: auto;
   position: relative;
@@ -60,6 +60,10 @@ h1 {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
+}
+
+.currency-select {
+  width: 230px;
 }
 
 .icon-container {

@@ -54,7 +54,7 @@ const ConvertMoney = () => {
             onChange={(e) => setFromCurrency(e.target.value)}
             required
           >
-            <ListCurrency displayDescriptions={false} />
+            <ListCurrency displayDescriptions={true} />
           </select>
           <div className="icon-container">
             <FontAwesomeIcon icon={faAngleDoubleRight} />
@@ -65,7 +65,7 @@ const ConvertMoney = () => {
             onChange={(e) => setToCurrency(e.target.value)}
             required
           >
-            <ListCurrency displayDescriptions={false} />
+            <ListCurrency displayDescriptions={true} />
           </select>
           <button type="submit" className="convert-button" disabled={loading}>
             {loading && <FontAwesomeIcon icon={faSpinner} spin style={{ marginRight: '5px' }} />}

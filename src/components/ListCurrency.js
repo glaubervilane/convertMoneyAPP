@@ -39,9 +39,9 @@ function ListCurrency({ displayDescriptions = true }) {
 	];
 
   function compare(currency1, currency2) {
-    if (currency1.acronym < currency2.acronym) {
+    if (currency1.description < currency2.description) {
       return -1;
-    } else if (currency1.acronym > currency2.acronym) {
+    } else if (currency1.description > currency2.description) {
       return 1;
     }
     return 0;
@@ -49,7 +49,7 @@ function ListCurrency({ displayDescriptions = true }) {
 
   return CURRENCY.sort(compare).map((currency) => (
     <option value={currency.acronym} key={currency.acronym}>
-      {displayDescriptions ? currency.description : currency.acronym}
+      {`${currency.acronym} - ${displayDescriptions ? currency.description : ""}`}
     </option>
   ));
 }
