@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function ListCurrency() {
+function ListCurrency({ displayDescriptions = true }) {
 
   const CURRENCY = [ //http://fixer.io
 		{ "acronym": "AUD", "description": "Autralian Dolar" },
@@ -39,20 +39,19 @@ function ListCurrency() {
 	];
 
   function compare(currency1, currency2) {
-    if (currency1.description < currency2.description) {
+    if (currency1.acronym < currency2.acronym) {
       return -1;
-    } else if (currency1.description > currency2.description) {
+    } else if (currency1.acronym > currency2.acronym) {
       return 1;
     }
     return 0;
   }
 
-  return CURRENCY.sort(compare).map(currency =>
+  return CURRENCY.sort(compare).map((currency) => (
     <option value={currency.acronym} key={currency.acronym}>
-      {currency.description}
+      {displayDescriptions ? currency.description : currency.acronym}
     </option>
-  );
-
+  ));
 }
 
 export default ListCurrency;

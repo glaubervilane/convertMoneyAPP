@@ -1,9 +1,12 @@
+// ConvertMoney.js
+
 import React, { useState } from 'react';
 import './ConvertMoney.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Alert, Modal } from 'react-bootstrap';
 import { faAngleDoubleRight, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import HeroImage from './images/hero.jpg';
+import ListCurrency from './components/ListCurrency';
 
 const ConvertMoney = () => {
   const [amount, setAmount] = useState(1);
@@ -33,7 +36,7 @@ const ConvertMoney = () => {
         </div>
       </section>
       <Alert variant="danger" show={false}>
-        Error fetching convertion rate!
+        Error fetching conversion rate!
       </Alert>
       <form className="convert-money-form" onSubmit={handleSubmit}>
         <div className="form-row">
@@ -51,12 +54,7 @@ const ConvertMoney = () => {
             onChange={(e) => setFromCurrency(e.target.value)}
             required
           >
-            <option>USD</option>
-            <option>BRL</option>
-            <option>CAD</option>
-            <option>EUR</option>
-            <option>GBP</option>
-            <option>ARS</option>
+            <ListCurrency displayDescriptions={false} />
           </select>
           <div className="icon-container">
             <FontAwesomeIcon icon={faAngleDoubleRight} />
@@ -67,12 +65,7 @@ const ConvertMoney = () => {
             onChange={(e) => setToCurrency(e.target.value)}
             required
           >
-            <option>USD</option>
-            <option>BRL</option>
-            <option>CAD</option>
-            <option>EUR</option>
-            <option>GBP</option>
-            <option>ARS</option>
+            <ListCurrency displayDescriptions={false} />
           </select>
           <button type="submit" className="convert-button" disabled={loading}>
             {loading && <FontAwesomeIcon icon={faSpinner} spin style={{ marginRight: '5px' }} />}
